@@ -8,7 +8,7 @@
         <version>2.6.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.github.c-santana-sp</groupId>
+    <groupId>io.github.c-santana-sp</groupId>
     <artifactId>pfy-jwt-auth</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>pfy-jwt-auth</name>

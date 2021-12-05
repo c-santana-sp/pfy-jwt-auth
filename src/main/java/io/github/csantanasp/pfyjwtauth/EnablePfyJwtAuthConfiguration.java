@@ -1,4 +1,4 @@
-package com.github.csantanasp.pfyjwtauth;
+package io.github.csantanasp.pfyjwtauth;
 
 import org.springframework.context.annotation.Import;
 

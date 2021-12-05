@@ -1,4 +1,4 @@
-package com.example.pfyjwtauth.jwt;
+package io.github.csantanasp.pfyjwtauth.jwt;
 
 import com.google.common.base.Strings;
 import io.jsonwebtoken.Claims;
@@ -17,7 +17,6 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -53,11 +52,8 @@ public class JwtTokenVerifier extends OncePerRequestFilter {
             Jws<Claims> claimsJws = Jwts.parser()
                     .setSigningKey(secretKey)
                     .parseClaimsJws(token);
-
             Claims body = claimsJws.getBody();
-
             String username = body.getSubject();
-
             var authorities = (List<Map<String, String>>) body.get("authorities");
 
             Set<SimpleGrantedAuthority> simpleGrantedAuthorities = authorities.stream()
@@ -68,7 +64,6 @@ public class JwtTokenVerifier extends OncePerRequestFilter {
                     username,
                     null,
                     simpleGrantedAuthorities
-//                    new SimpleGrantedAuthority(authorities)
             );
             SecurityContextHolder.getContext().setAuthentication(authentication);
 
@@ -76,7 +71,6 @@ public class JwtTokenVerifier extends OncePerRequestFilter {
             response.addHeader("Error", "Deu ruim chefe");
             throw new IllegalStateException(String.format("Token %s cannot be trust", token));
         }
-
 
         filterChain.doFilter(request, response);
     }

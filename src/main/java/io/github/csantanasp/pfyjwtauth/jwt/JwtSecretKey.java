@@ -1,4 +1,4 @@
-package com.github.csantanasp.pfyjwtauth.jwt;
+package io.github.csantanasp.pfyjwtauth.jwt;
 
 import io.jsonwebtoken.security.Keys;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

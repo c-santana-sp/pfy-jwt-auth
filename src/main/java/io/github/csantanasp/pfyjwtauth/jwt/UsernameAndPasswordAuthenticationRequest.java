@@ -1,4 +1,4 @@
-package com.github.csantanasp.pfyjwtauth.jwt;
+package io.github.csantanasp.pfyjwtauth.jwt;
 
 public class UsernameAndPasswordAuthenticationRequest {
 

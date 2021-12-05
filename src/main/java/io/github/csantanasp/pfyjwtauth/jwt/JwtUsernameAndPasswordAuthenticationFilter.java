@@ -1,4 +1,4 @@
-package com.example.pfyjwtauth.jwt;
+package io.github.csantanasp.pfyjwtauth.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
@@ -41,7 +41,6 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
                     authenticationRequest.getUsername(),
                     authenticationRequest.getPassword()
             );
-//          f  Authentication authenticate = authenticationManager.authenticate(authentication);
             return authenticationManager.authenticate(authentication);
 
 

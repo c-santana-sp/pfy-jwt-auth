@@ -1,20 +1,12 @@
-package com.example.pfyjwtauth.jwt;
+package io.github.csantanasp.pfyjwtauth.jwt;
 
+import com.google.common.net.HttpHeaders;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import com.google.common.net.HttpHeaders;
 
 @EnableConfigurationProperties
 @ConfigurationProperties(prefix = "application.jwt")
 public class JwtConfig {
-
-    private String secretKey;
-    private String tokenPrefix;
-    private Integer tokenExpirationAfterDays;
-
-    public String getAuthorizationHeader() {
-        return HttpHeaders.AUTHORIZATION;
-    }
 
     public String getSecretKey() {
         return secretKey;
@@ -39,4 +31,13 @@ public class JwtConfig {
     public void setTokenExpirationAfterDays(Integer tokenExpirationAfterDays) {
         this.tokenExpirationAfterDays = tokenExpirationAfterDays;
     }
+
+    private String secretKey;
+    private String tokenPrefix;
+    private Integer tokenExpirationAfterDays;
+
+    public String getAuthorizationHeader() {
+        return HttpHeaders.AUTHORIZATION;
+    }
 }
+
